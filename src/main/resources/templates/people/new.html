@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New user</title>
+  <style>
+    body {
+      font: bold 100% Georgia, serif;
+      text-shadow: 5px 5px 5px #3F3F7F;
+      background: #B1B9D9;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    input[type="text"] {
+      color: blueviolet;
+      background: aliceblue;
+      font: bold 100% Georgia, serif;
+      text-shadow: 5px 5px 5px #3F3F7F;
+      margin: 10px;
+      padding: 5px;
+    }
+
+    input[type="submit"] {
+      color: blueviolet;
+      background: aliceblue;
+      font: bold 100% Georgia, serif;
+      text-shadow: 5px 5px 5px #3F3F7F;
+      margin: 10px;
+      padding: 5px 20px;
+      cursor: pointer;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<form th:method="POST" th:action="@{/people}" th:object="${user}">
+  <label for="name">Enter name: </label>
+  <input type="text" th:field="*{name}" id="name"/>
+  <br/>
+  <label for="age">Enter age: </label>
+  <input type="text" th:field="*{age}" id="age"/>
+  <br/>
+  <input type="submit" value="Create!"/>
+</form>
+</body>
+</html>
